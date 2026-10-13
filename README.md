@@ -118,3 +118,22 @@ API keys are passed at runtime and are never baked into the image.
 | `GOOGLE_API_KEY` | server | Gemini API access |
 | `TAVILY_API_KEY` | server | Tavily web search |
 | `NEXT_PUBLIC_API_URL` | client | Base URL of the backend (no trailing slash) |
+
+## Screenshots
+
+Pythia is deployed end to end: the Next.js frontend runs on Vercel and calls the FastAPI backend running as a Docker container on Render. The screenshots below show the app answering a question and both deployments live.
+
+### Chat interface
+Ask a question and Pythia searches the web, shows the sources it reads, and streams the answer.
+
+![Pythia answering a question](screenshots/app.png)
+
+### Backend on Render
+The FastAPI backend, packaged as a Docker image, running as a live web service.
+
+![Render deployment](screenshots/render-live.png)
+
+### Frontend on Vercel
+The Next.js frontend deployed on Vercel and connected to the Render backend.
+
+![Vercel deployment](screenshots/vercel-live.png)
